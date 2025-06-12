@@ -1,3 +1,4 @@
+import { Notice } from './../pages/Support/Notice';
 import { Dashboard } from '../pages/Dashboard';
 import { NotFound } from '../pages/Error/NotFound/NotFound';
 import { Login } from './../pages/Login';
@@ -12,6 +13,17 @@ const routers: RouteObject[] = [
   {
     path: '/react',
     Component: Dashboard,
+    children: [
+      {
+        path: 'support',
+        children: [
+          {
+            path: 'notice',
+            Component: Notice,
+          },
+        ],
+      },
+    ],
   },
 ];
 
